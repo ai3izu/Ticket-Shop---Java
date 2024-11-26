@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.LoginController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="387.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e);;">
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="163.0" layoutY="183.0" prefHeight="45.0" prefWidth="254.0" text="Witaj w Sleep Ticket" textFill="WHITE" textOverrun="CENTER_ELLIPSIS" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="200.0">
+                    <font>
+                        <Font name="Roboto Thin" size="31.0" />
+                    </font>
+                </Label>
+                <TextField layoutX="45.0" layoutY="280.0" prefHeight="51.0" prefWidth="510.0" promptText="Nazwa Użytkownika" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="280.0">
+               <font>
+                  <Font name="Roboto Light" size="16.0" />
+               </font></TextField>
+                <PasswordField layoutX="57.0" layoutY="360.0" prefHeight="51.0" prefWidth="510.0" promptText="Hasło" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="360.0">
+               <font>
+                  <Font name="Roboto Light" size="16.0" />
+               </font></PasswordField>
+            <HBox alignment="CENTER" layoutX="100.0" layoutY="429.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="429.0">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="160.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 70%; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Zaloguj się" textAlignment="CENTER">
+                     <font>
+                        <Font name="Roboto Light" size="16.0" />
+                     </font></Button>
+                  <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButtonAction" prefHeight="55.0" prefWidth="160.0" style="-fx-background-color: #8e44ad; -fx-text-fill: ffffff; -fx-border-radius: 15; -fx-padding: 10 20 10 20;" text="Wyjdź" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="80.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Roboto Light" size="16.0" />
+                     </font></Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
