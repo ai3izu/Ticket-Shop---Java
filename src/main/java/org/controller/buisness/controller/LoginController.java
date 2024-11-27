@@ -1,4 +1,4 @@
-package org.controller;
+package org.controller.buisness.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,7 +10,7 @@ public class LoginController {
     private Button exitButton;
 
     @FXML
-    public void handleExitButtonAction(ActionEvent actionEvent) {
+    public void handleExitButtonAction() {
         Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();
     }
