@@ -2,23 +2,27 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.gui.controller.RegisterController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0"
+           prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.controller.gui.controller.RegisterController">
     <children>
-        <VBox alignment="TOP_CENTER" prefHeight="Infinity" prefWidth="Infinity" spacing="30.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e);">
+        <VBox alignment="TOP_CENTER" prefHeight="Infinity" prefWidth="Infinity" spacing="30.0"
+              style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e);">
             <children>
                 <ImageView fx:id="logoImage" fitHeight="250.0" fitWidth="266.0" preserveRatio="true" smooth="true">
                     <image>
-                        <Image url="@images/logo-sleep-ticket.png" />
+                        <Image url="@images/logo-sleep-ticket.png"/>
                     </image>
                 </ImageView>
 
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Utwórz swoje konto" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Utwórz swoje konto" textFill="WHITE"
+                       textOverrun="CENTER_ELLIPSIS">
                     <font>
-                        <Font name="Roboto Thin" size="31.0" />
+                        <Font name="Roboto Thin" size="31.0"/>
                     </font>
                 </Label>
 
@@ -26,43 +30,44 @@
                     <children>
                         <TextField fx:id="firstNameField" prefHeight="51.0" prefWidth="510.0" promptText="Imię">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                             <VBox.margin>
-                                <Insets bottom="10.0" left="80.0" right="80.0" />
+                                <Insets bottom="10.0" left="80.0" right="80.0"/>
                             </VBox.margin>
                         </TextField>
 
                         <TextField fx:id="lastNameField" prefHeight="51.0" prefWidth="510.0" promptText="Nazwisko">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                             <VBox.margin>
-                                <Insets bottom="10.0" left="80.0" right="80.0" />
+                                <Insets bottom="10.0" left="80.0" right="80.0"/>
                             </VBox.margin>
                         </TextField>
 
-                        <DatePicker fx:id="birthDatePicker" prefHeight="51.0" prefWidth="510.0" promptText="Data Urodzenia">
+                        <DatePicker fx:id="birthDatePicker" prefHeight="51.0" prefWidth="510.0"
+                                    promptText="Data Urodzenia">
                             <VBox.margin>
-                                <Insets bottom="10.0" left="80.0" right="80.0" />
+                                <Insets bottom="10.0" left="80.0" right="80.0"/>
                             </VBox.margin>
                         </DatePicker>
 
                         <TextField fx:id="emailField" prefHeight="51.0" prefWidth="510.0" promptText="Adres Email">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                             <VBox.margin>
-                                <Insets bottom="10.0" left="80.0" right="80.0" />
+                                <Insets bottom="10.0" left="80.0" right="80.0"/>
                             </VBox.margin>
                         </TextField>
 
                         <PasswordField fx:id="passwordField" prefHeight="51.0" prefWidth="510.0" promptText="Hasło">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                             <VBox.margin>
-                                <Insets left="80.0" right="80.0" />
+                                <Insets left="80.0" right="80.0"/>
                             </VBox.margin>
                         </PasswordField>
                     </children>
@@ -70,15 +75,21 @@
 
                 <HBox alignment="CENTER" spacing="15">
                     <children>
-                        <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegisterButtonAction" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 70%; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Zarejestruj się" textAlignment="CENTER">
+                        <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegisterButtonAction"
+                                prefHeight="55.0" prefWidth="200.0"
+                                style="-fx-background-color: #8e44ad; -fx-border-radius: 70%; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
+                                text="Zarejestruj się" textAlignment="CENTER">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                         </Button>
 
-                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-text-fill: #ffffff; -fx-border-radius: 15; -fx-padding: 10 20 10 20;" text="Powrót" textAlignment="CENTER">
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButtonAction"
+                                prefHeight="55.0" prefWidth="200.0"
+                                style="-fx-background-color: #8e44ad; -fx-text-fill: #ffffff; -fx-border-radius: 15; -fx-padding: 10 20 10 20;"
+                                text="Powrót" textAlignment="CENTER">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                         </Button>
                     </children>

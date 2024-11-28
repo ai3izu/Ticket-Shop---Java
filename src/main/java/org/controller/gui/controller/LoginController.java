@@ -1,8 +1,6 @@
 package org.controller.gui.controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -11,9 +9,7 @@ import javafx.stage.Stage;
 import org.Main;
 import org.controller.buisness.controller.UserLoginController;
 import org.gui.fx.RegisterPanel;
-
 import java.io.IOException;
-import java.util.Objects;
 
 public class LoginController {
     private final UserLoginController ULC = new UserLoginController();

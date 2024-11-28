@@ -11,8 +11,8 @@ public class UserLoginController {
         try {
             session.beginTransaction();
             Query<User> query = session.createQuery("FROM User WHERE first_name = :first_name AND password = :password", User.class);
-            query.setParameter("first_name",username);
-            query.setParameter("password",password);
+            query.setParameter("first_name", username);
+            query.setParameter("password", password);
 
             User user = query.uniqueResult();
             session.getTransaction().commit();
@@ -20,7 +20,7 @@ public class UserLoginController {
             return user != null;
         } catch (Exception e) {
             if (session.getTransaction().isActive()) session.getTransaction().rollback();
-            e.printStackTrace();
+            System.out.println("Error authenticating user " + e.getMessage());
             return false;
         } finally {
             session.close();
