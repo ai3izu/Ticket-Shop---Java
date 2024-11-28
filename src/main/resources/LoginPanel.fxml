@@ -1,81 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.buisness.controller.LoginController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0"
+           prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="org.controller.gui.controller.LoginController">
     <children>
-        <VBox alignment="TOP_CENTER" prefHeight="Infinity" prefWidth="Infinity" spacing="30.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e);">
+        <VBox alignment="TOP_CENTER" prefHeight="Infinity" prefWidth="Infinity" spacing="30.0"
+              style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e);">
             <children>
-                <!-- Obraz jako logo -->
                 <ImageView fx:id="logoImage" fitHeight="250.0" fitWidth="266.0" preserveRatio="true" smooth="true">
                     <image>
-                        <Image url="@images/logo-sleep-ticket.png" />
+                        <Image url="@images/logo-sleep-ticket.png"/>
                     </image>
                 </ImageView>
 
-                <!-- naglowek -->
-                <Label alignment="CENTER" contentDisplay="CENTER" text="Witaj w Sleep Ticket" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+                <Label alignment="CENTER" contentDisplay="CENTER" text="Witaj w Sleep Ticket" textFill="WHITE"
+                       textOverrun="CENTER_ELLIPSIS">
                     <font>
-                        <Font name="Roboto Thin" size="31.0" />
+                        <Font name="Roboto Thin" size="31.0"/>
                     </font>
                 </Label>
 
-                <!-- inputy -->
                 <VBox alignment="CENTER" prefWidth="510.0" spacing="10.0">
                     <children>
-                        <TextField fx:id="usernameField" prefHeight="51.0" prefWidth="510.0" promptText="Nazwa Użytkownika">
+                        <TextField fx:id="usernameField" prefHeight="51.0" prefWidth="510.0"
+                                   promptText="Nazwa Użytkownika">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="80.0" right="80.0" />
-                     </VBox.margin>
+                            <VBox.margin>
+                                <Insets bottom="20.0" left="80.0" right="80.0"/>
+                            </VBox.margin>
                         </TextField>
 
                         <PasswordField fx:id="passwordField" prefHeight="51.0" prefWidth="510.0" promptText="Hasło">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
-                     <VBox.margin>
-                        <Insets left="80.0" right="80.0" />
-                     </VBox.margin>
+                            <VBox.margin>
+                                <Insets left="80.0" right="80.0"/>
+                            </VBox.margin>
                         </PasswordField>
                     </children>
                 </VBox>
 
-                <!-- kontener dla przyciskow -->
                 <HBox alignment="CENTER" spacing="15">
                     <children>
-                        <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 70%; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Zaloguj się" textAlignment="CENTER">
+                        <Button fx:id="loginButton" onAction="#handleLoginButtonAction" mnemonicParsing="false" prefHeight="55.0" prefWidth="200.0"
+                                style="-fx-background-color: #8e44ad; -fx-border-radius: 70%; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
+                                text="Zaloguj się" textAlignment="CENTER">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                         </Button>
 
-                        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButtonAction" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-text-fill: #ffffff; -fx-border-radius: 15; -fx-padding: 10 20 10 20;" text="Wyjdź" textAlignment="CENTER">
+                        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#handleExitButtonAction"
+                                prefHeight="55.0" prefWidth="200.0"
+                                style="-fx-background-color: #8e44ad; -fx-text-fill: #ffffff; -fx-border-radius: 15; -fx-padding: 10 20 10 20;"
+                                text="Wyjdź" textAlignment="CENTER">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                         </Button>
                     </children>
                 </HBox>
 
-                <!-- rejestracja -->
                 <VBox alignment="CENTER" spacing="10">
                     <children>
                         <Label style="-fx-font-size: 14px;" text="Nie masz konta? Zarejestruj się" textFill="WHITE">
                             <font>
-                                <Font name="Roboto Light" />
+                                <Font name="Roboto Light"/>
                             </font>
                         </Label>
 
-                        <Button fx:id="registerButton" mnemonicParsing="false" prefHeight="55.0" prefWidth="200.0" style="-fx-background-color: #2980b9; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Rejestracja" textAlignment="CENTER">
+                        <Button fx:id="registerButton" onAction="#handleRegisterButtonAction" mnemonicParsing="false" prefHeight="55.0" prefWidth="200.0"
+                                style="-fx-background-color: #2980b9; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
+                                text="Rejestracja" textAlignment="CENTER">
                             <font>
-                                <Font name="Roboto Light" size="16.0" />
+                                <Font name="Roboto Light" size="16.0"/>
                             </font>
                         </Button>
                     </children>

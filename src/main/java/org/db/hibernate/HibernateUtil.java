@@ -1,7 +1,5 @@
 package org.db.hibernate;
 
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -17,6 +15,6 @@ public class HibernateUtil {
         }
     }
     public static Session getSession(){
-        return sessionFactory.getCurrentSession();
+        return sessionFactory.openSession();
     }
 }
