@@ -37,7 +37,7 @@ public class LoginController {
             ALERT.showAlert("Błąd", "Pola nie mogą być puste.");
             return;
         }
-        if (isValidEmail(email)) {
+        if (!isValidEmail(email)) {
             ALERT.showAlert("Błąd", "Niepoprawny format adresu e-mail");
         }
         boolean isAuthenticated = ULC.authenticateUser(email, password);
