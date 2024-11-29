@@ -1,22 +1,25 @@
 package org.controller.gui.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 import org.Main;
 import org.controller.buisness.controller.UserLoginController;
+import org.gui.fx.NotificationAlert;
 import org.gui.fx.RegisterPanel;
+
 import java.io.IOException;
 
 public class LoginController {
     private final UserLoginController ULC = new UserLoginController();
+    private final NotificationAlert ALERT = new NotificationAlert();
     @FXML
     private Button exitButton;
     @FXML
-    private TextField usernameField;
+    private TextField emailField;
     @FXML
     private PasswordField passwordField;
 
@@ -27,32 +30,31 @@ public class LoginController {
     }
 
     public void handleLoginButtonAction() {
-        String username = usernameField.getText();
+        String email = emailField.getText();
         String password = passwordField.getText();
 
-        if (username.isEmpty() || password.isEmpty()) {
-            showAlert("Błąd", "Pola nie mogą być puste.");
+        if (email.isEmpty() || password.isEmpty()) {
+            ALERT.showAlert("Błąd", "Pola nie mogą być puste.");
             return;
         }
-        boolean isAuthenticated = ULC.authenticateUser(username, password);
+        if (isValidEmail(email)) {
+            ALERT.showAlert("Błąd", "Niepoprawny format adresu e-mail");
+        }
+        boolean isAuthenticated = ULC.authenticateUser(email, password);
         if (isAuthenticated) {
             System.out.println("Pomyslnie zalogowano");
         } else {
-            showAlert("Bład", "Niepoprawne dane logowania");
+            ALERT.showAlert("Bład", "Niepoprawne dane logowania");
         }
-    }
-
-
-    public void showAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
     }
 
     public void handleRegisterButtonAction() throws IOException {
         RegisterPanel registerPanel = new RegisterPanel(Main.getPrimaryStage());
         registerPanel.showRegisterPanel();
+    }
+
+    private boolean isValidEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+        return email.matches(emailRegex);
     }
 }
