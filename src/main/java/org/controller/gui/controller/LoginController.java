@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import org.Main;
 import org.controller.buisness.controller.UserLoginController;
+import org.gui.fx.AppMainWindow;
 import org.gui.fx.NotificationAlert;
 import org.gui.fx.RegisterPanel;
 
@@ -29,7 +30,7 @@ public class LoginController {
         stage.close();
     }
 
-    public void handleLoginButtonAction() {
+    public void handleLoginButtonAction() throws IOException {
         String email = emailField.getText();
         String password = passwordField.getText();
 
@@ -42,7 +43,8 @@ public class LoginController {
         }
         boolean isAuthenticated = ULC.authenticateUser(email, password);
         if (isAuthenticated) {
-            System.out.println("Pomyslnie zalogowano");
+            AppMainWindow appMainWindow = new AppMainWindow(Main.getPrimaryStage());
+            appMainWindow.showMainAppWindow();
         } else {
             ALERT.showAlert("Bład", "Niepoprawne dane logowania");
         }

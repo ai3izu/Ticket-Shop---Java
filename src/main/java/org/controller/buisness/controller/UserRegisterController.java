@@ -23,7 +23,6 @@ public class UserRegisterController {
             Transaction transaction = session.beginTransaction();
             session.save(user);
             transaction.commit();
-            System.out.println("dodane do bazy");
             return true;
         } catch (Exception e) {
             System.out.println("Error authenticating user " + e.getMessage());

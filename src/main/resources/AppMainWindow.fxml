@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.gui.controller.AppMainWindowController">
+    <left>
+        <VBox alignment="CENTER" prefWidth="250.0" spacing="20.0"
+              style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e); -fx-padding: 10px 20px 20px 20px;">
+            <children>
+                <Label alignment="CENTER" text="Menu Sleep Ticket" textAlignment="CENTER" textFill="WHITE"
+                       style="-fx-padding: 10px 0;">
+                    <font>
+                        <Font name="Roboto Thin" size="20.0"/>
+                    </font>
+                </Label>
+
+                <VBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <Button fx:id="view1Button" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0"
+                                style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
+                                text="Widok 1"/>
+                        <Button fx:id="view2Button" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0"
+                                style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
+                                text="Widok 2"/>
+                        <Button fx:id="view3Button" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0"
+                                style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
+                                text="Widok 3"/>
+                    </children>
+                </VBox>
+
+                <Region prefHeight="200.0" prefWidth="210.0" style="-fx-min-height: 20px;" VBox.vgrow="ALWAYS"/>
+
+                <VBox alignment="CENTER" spacing="20.0">
+                    <children>
+                        <Button fx:id="logoutButton" onAction="#handleLogoutButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0"
+                                style="-fx-background-color: #2980b9; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
+                                text="Wyloguj się" textAlignment="CENTER"/>
+                        <Button fx:id="exitButton" onAction="#handleExitButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0"
+                                style="-fx-background-color: #2980b9; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
+                                text="Wyjdź" textAlignment="CENTER"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                   style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e); -fx-padding: 20px;">
+            <Label alignment="CENTER" style="-fx-font-size: 30px;" text="Ekran Główny" textFill="WHITE">
+                <font>
+                    <Font name="Roboto Thin" size="30.0"/>
+                </font>
+            </Label>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-background-color: #2c3e50; -fx-padding: 10px;">
+            <children>
+                <Label alignment="CENTER" prefHeight="6.0" prefWidth="200.0" text="\@ 2024. Sleep Ticket"
+                       textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Roboto Thin" size="16.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
