@@ -11,8 +11,6 @@ import java.io.IOException;
 public class AppMainWindowController {
     @FXML
     private Button exitButton;
-    @FXML
-    private Button logoutButton;
 
     @FXML
     public void handleExitButton() {
@@ -20,6 +18,7 @@ public class AppMainWindowController {
         stage.close();
     }
 
+    @FXML
     public void handleLogoutButton() throws IOException {
         LoginPanel loginPanel = new LoginPanel(Main.getPrimaryStage());
         loginPanel.showLoginPanel();
