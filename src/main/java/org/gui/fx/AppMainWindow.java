@@ -24,7 +24,9 @@ public class AppMainWindow {
             scene.setRoot(root);
         }
         stage.setTitle("Sleep Ticket");
-        stage.setMaximized(true);
+        stage.setWidth(1600);
+        stage.setHeight(900);
+        stage.centerOnScreen();
         stage.show();
     }
 
