@@ -1,8 +1,7 @@
-package org.controller.buisness.controller;
+package org.controller.business.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 import org.db.hibernate.HibernateUtil;
 import org.db.hibernate.User;
 import org.db.hibernate.UserSession;
@@ -20,7 +19,6 @@ public class UserProfileController {
     @FXML
     public Label roleLabel;
     public Label surnameLabel;
-    public Text userNameText;
 
     public void initialize() {
         Integer userID = UserSession.getLoggedInUserId();
@@ -35,16 +33,19 @@ public class UserProfileController {
                 dateLabel.setText("Data urodzenia: " + currentUser.getBirthDate());
                 roleLabel.setText("Rola: " + currentUser.getRole());
             } else {
-                System.out.println("No user data available");
+                System.out.println("Brak danych użytkownika");
             }
         }
     }
-
     private User retrieveUserDataFromDatabase(Integer userID) {
-        Session session = HibernateUtil.getSession();
-        session.beginTransaction();
-        User user = session.get(User.class, userID);
-        session.getTransaction().commit();
-        return user;
+        try (Session session = HibernateUtil.getSession()) {
+            session.beginTransaction();
+            User user = session.get(User.class, userID);
+            session.getTransaction().commit();
+            return user;
+        } catch (Exception e) {
+            System.out.println("Błąd pozyskiwania użytkownika z bazy" + e.getMessage());
+            return null;
+        }
     }
 }

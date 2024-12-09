@@ -4,13 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import org.Main;
-import org.controller.buisness.controller.UserRegisterController;
+import org.controller.business.controller.UserRegisterController;
 import org.db.hibernate.User;
 import org.gui.fx.LoginPanel;
 import org.gui.fx.NotificationAlert;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 
@@ -27,6 +28,7 @@ public class RegisterController {
     private TextField emailField;
     @FXML
     private TextField passwordField;
+    private final String regex = "^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=.*\\d).*$";
 
     public void handleBackButtonAction() throws Exception {
         LoginPanel loginPanel = new LoginPanel(Main.getPrimaryStage());
@@ -40,6 +42,7 @@ public class RegisterController {
         String email = emailField.getText();
         String password = passwordField.getText();
 
+        if (!validateRegisterData()) return;
 
         if (Stream.of(firstName, lastName, email, password).anyMatch(String::isEmpty) || birthDate == null) {
             ALERT.showAlert("Bład", "Wszystkie pola muszą być wypełnione.");
@@ -60,6 +63,22 @@ public class RegisterController {
             LoginPanel loginPanel = new LoginPanel(Main.getPrimaryStage());
             loginPanel.showLoginPanel();
         } else ALERT.showAlert("Bład", "rejestracja nie powiodła się");
+    }
+
+    private boolean validateRegisterData(){
+        if (passwordField.getLength() < 8){
+            ALERT.showAlert("Bład", "Hasło powinno zawierać conajmniej 8 znaków.");
+            return false;
+        }
+        if (!Pattern.matches(regex,passwordField.getText())){
+            ALERT.showAlert("Błąd", "Hasło powinno zawierać:\n - co najmniej 1 znak specjalny,\n - co najmniej 1 wielką literę,\n - co najmniej 1 cyfrę.");
+            return false;
+        }
+        if (emailField == null || !emailField.getText().contains("@")) {
+            ALERT.showAlert("Błąd", "Adres e-mail musi zawierać znak '@'.");
+            return false;
+        }
+        return true;
     }
 }
 

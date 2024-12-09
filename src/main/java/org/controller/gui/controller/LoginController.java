@@ -6,7 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.Main;
-import org.controller.buisness.controller.UserLoginController;
+import org.controller.business.controller.UserLoginController;
 import org.db.hibernate.User;
 import org.gui.fx.AppMainWindow;
 import org.gui.fx.NotificationAlert;

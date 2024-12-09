@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 <VBox alignment="TOP_CENTER" prefHeight="511.0" prefWidth="417.0" spacing="30.0"
       style="-fx-background-color: transparent; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/17.0.2-ea"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.buisness.controller.UserProfileController">
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.business.controller.UserProfileController">
     <Label fx:id="welcomeLabel"
            style="-fx-font-size: 35px; -fx-text-fill: white; -fx-font-family: 'Roboto'; -fx-font-weight: normal;">
         <font>

@@ -1,5 +1,6 @@
 package org.db.hibernate;
 
+import javafx.beans.property.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,5 +29,32 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public User(){this.role = "user";}
+    public User() {
+        this.role = "user";
+    }
+
+    // Table View Binding
+    public IntegerProperty idProperty() {
+        return new SimpleIntegerProperty(id);
+    }
+
+    public StringProperty firstNameProperty() {
+        return new SimpleStringProperty(firstName);
+    }
+
+    public StringProperty lastNameProperty() {
+        return new SimpleStringProperty(lastName);
+    }
+
+    public StringProperty emailProperty() {
+        return new SimpleStringProperty(email);
+    }
+
+    public StringProperty passwordProperty() {
+        return new SimpleStringProperty(password);
+    }
+
+    public ObjectProperty<Date> birthDateProperty() {
+        return new SimpleObjectProperty<>(birthDate);
+    }
 }

@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="borderPane" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e);" stylesheets="style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.gui.controller.AppMainWindowController">
+<BorderPane fx:id="borderPane"  style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e);" stylesheets="style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.gui.controller.AppMainWindowController">
     <left>
-        <VBox alignment="CENTER" prefWidth="250.0" spacing="20.0" style="-fx-background-color: #1b2838; -fx-padding: 10px 20px 20px 20px; -fx-margin-top: 20px;">
+        <VBox alignment="CENTER"  spacing="20.0" style="-fx-background-color: #1b2838; -fx-padding: 10px 20px 20px 20px; -fx-margin-top: 20px;">
             <children>
                 <VBox alignment="CENTER" spacing="20.0">
                     <children>
@@ -19,7 +19,7 @@
                         <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleProfileButton" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Profil" />
                         <Button fx:id="view3Button" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Drukuj Bilet" />
                         <Button fx:id="view3Button1" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Edytor Koncertów" />
-                        <Button fx:id="userListButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Lista Użytkowników" />
+                        <Button fx:id="userListButton" onAction="#handleUserListButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Lista Użytkowników" />
                     </children>
                 </VBox>
 
@@ -36,7 +36,7 @@
     </left>
 
     <center>
-        <StackPane fx:id="contentArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: transparent; -fx-padding: 20px;">
+        <StackPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: transparent; -fx-padding: 20px;">
             <children>
                 <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml">
                     <Label style="-fx-font-size: 40px; -fx-font-family: 'Roboto'; -fx-font-weight: 100;" text="Strona Główna" textFill="WHITE" />

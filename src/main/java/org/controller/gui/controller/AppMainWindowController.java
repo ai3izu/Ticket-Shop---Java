@@ -59,6 +59,11 @@ public class AppMainWindowController {
         borderPane.setCenter(profileView);
     }
 
+    public void handleUserListButton() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow/View/UserList.fxml"));
+        Pane userListView = loader.load();
+        borderPane.setCenter(userListView);
+    }
     private void loadView(String fileName) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow/View/" + fileName));
         Pane view = loader.load();

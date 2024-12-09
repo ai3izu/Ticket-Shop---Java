@@ -1,4 +1,4 @@
-package org.controller.buisness.controller;
+package org.controller.business.controller;
 
 import org.db.hibernate.HibernateUtil;
 import org.db.hibernate.User;
@@ -25,7 +25,7 @@ public class UserLoginController {
             return false;
         } catch (Exception e) {
             if (session.getTransaction().isActive()) session.getTransaction().rollback();
-            System.out.println("Error authenticating user " + e.getMessage());
+            System.out.println("Błąd podczas uwierzytelniania użytkownika " + e.getMessage());
             return false;
         } finally {
             session.close();
@@ -35,11 +35,10 @@ public class UserLoginController {
     public User getLoggedInUser() {
         Integer userId = UserSession.getLoggedInUserId();
         if (userId == null) return null;
-
         try (Session session = HibernateUtil.getSession()) {
             return session.get(User.class, userId);
         } catch (Exception e) {
-            System.out.println("Error fetching logged in user: " + e.getMessage());
+            System.out.println("Błąd pozyskania zalogowanego użytkownika: " + e.getMessage());
             return null;
         }
     }
