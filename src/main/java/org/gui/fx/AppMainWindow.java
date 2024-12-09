@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import org.controller.gui.controller.AppMainWindowController;
+import org.db.hibernate.User;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -15,8 +17,13 @@ public class AppMainWindow {
     @NonNull
     private Stage stage;
 
-    public void showMainAppWindow() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/AppMainWindow.fxml")));
+    public void showMainAppWindow(User user) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/AppMainWindow.fxml")));
+        Parent root = loader.load();
+
+        AppMainWindowController controller = loader.getController();
+        controller.setUserView(user);
+
         Scene scene = stage.getScene();
         if (scene == null) {
             stage.setScene(new Scene(root));
@@ -29,5 +36,4 @@ public class AppMainWindow {
         stage.centerOnScreen();
         stage.show();
     }
-
 }

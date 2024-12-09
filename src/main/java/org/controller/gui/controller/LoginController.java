@@ -5,9 +5,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import org.Main;
 import org.controller.buisness.controller.UserLoginController;
+import org.db.hibernate.User;
 import org.gui.fx.AppMainWindow;
 import org.gui.fx.NotificationAlert;
 import org.gui.fx.RegisterPanel;
@@ -43,8 +43,9 @@ public class LoginController {
         }
         boolean isAuthenticated = ULC.authenticateUser(email, password);
         if (isAuthenticated) {
+            User loggedUser = ULC.getLoggedInUser();
             AppMainWindow appMainWindow = new AppMainWindow(Main.getPrimaryStage());
-            appMainWindow.showMainAppWindow();
+            appMainWindow.showMainAppWindow(loggedUser);
         } else {
             ALERT.showAlert("Bład", "Niepoprawne dane logowania");
         }

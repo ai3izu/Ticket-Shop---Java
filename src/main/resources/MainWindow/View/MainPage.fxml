@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml" fx:controller="org.controller.gui.controller.AppMainWindowController"
+      style="-fx-background-color: transparent;">
+    <Label text="Strona Główna" style="-fx-font-size: 40px; -fx-font-family: 'Roboto'; -fx-font-weight: 100;" textFill="WHITE"/>
+    <Label text="Witamy w aplikacji Sleep Ticket!" style="-fx-font-size: 25px; -fx-font-family: 'Roboto'; -fx-font-weight: 100;" textFill="WHITE"/>
+</VBox>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<VBox alignment="TOP_CENTER" prefHeight="511.0" prefWidth="417.0" spacing="30.0"
+      style="-fx-background-color: transparent; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.buisness.controller.UserProfileController">
+    <Label fx:id="welcomeLabel"
+           style="-fx-font-size: 35px; -fx-text-fill: white; -fx-font-family: 'Roboto'; -fx-font-weight: normal;">
+        <font>
+            <Font name="Roboto" size="35"/>
+        </font>
+    </Label>
+
+    <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../../images/logo-sleep-ticket.png"/>
+        </image>
+    </ImageView>
+
+    <Label style="-fx-font-size: 30px; -fx-text-fill: white; -fx-underline: true;" text="Twoje Dane">
+        <font>
+            <Font name="Roboto" size="30"/>
+        </font>
+    </Label>
+
+    <VBox alignment="CENTER" spacing="20.0">
+        <Label fx:id="nameLabel" style="-fx-font-size: 22px; -fx-text-fill: white;"/>
+        <Label fx:id="surnameLabel" style="-fx-font-size: 22px; -fx-text-fill: white;"/>
+        <Label fx:id="emailLabel" style="-fx-font-size: 22px; -fx-text-fill: white;"/>
+        <Label fx:id="dateLabel" style="-fx-font-size: 22px; -fx-text-fill: white;"/>
+        <Label fx:id="roleLabel" style="-fx-font-size: 22px; -fx-text-fill: white;"/>
+    </VBox>
+</VBox>

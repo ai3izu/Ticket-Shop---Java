@@ -32,9 +32,7 @@ public class UserRegisterController {
 
     private boolean doesEmailAlreadyExist(String email) {
         try (Session session = HibernateUtil.getSession()) {
-            return session.createQuery(
-                    "From User where email = :email", User.class
-            ).setParameter("email", email).uniqueResult() != null;
+            return session.createQuery("From User where email = :email", User.class).setParameter("email", email).uniqueResult() != null;
         } catch (Exception e) {
             System.out.println("Error checking email existence: " + e.getMessage());
             return false;
@@ -46,8 +44,6 @@ public class UserRegisterController {
     }
 
     private boolean validateUserData(User user) {
-        return Stream.of(
-                user.getFirstName(), user.getLastName(), user.getEmail()
-        ).allMatch(field -> field != null && !field.isEmpty()) && user.getBirthDate() != null;
+        return Stream.of(user.getFirstName(), user.getLastName(), user.getEmail()).allMatch(field -> field != null && !field.isEmpty()) && user.getBirthDate() != null;
     }
 }
