@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -28,6 +29,8 @@ public class User {
     private String role;
     @Column(name = "password", nullable = false)
     private String password;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Ticket> tickets;
 
     public User() {
         this.role = "user";

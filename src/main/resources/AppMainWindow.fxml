@@ -18,7 +18,7 @@
                         <Button fx:id="view1Button1" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Koncerty" />
                         <Button fx:id="profileButton" mnemonicParsing="false" onAction="#handleProfileButton" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Profil" />
                         <Button fx:id="view3Button" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Drukuj Bilet" />
-                        <Button fx:id="view3Button1" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Edytor Koncertów" />
+                        <Button fx:id="concertEditorButton" onAction="#handleConcertEditorButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Edytor Koncertów" />
                         <Button fx:id="userListButton" onAction="#handleUserListButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;" text="Lista Użytkowników" />
                     </children>
                 </VBox>

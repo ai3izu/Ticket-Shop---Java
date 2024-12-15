@@ -39,7 +39,8 @@ public class LoginController {
             return;
         }
         if (!isValidEmail(email)) {
-            ALERT.showAlert("Błąd", "Niepoprawny format adresu e-mail");
+            ALERT.showAlert("Błąd", "Niepoprawne dane logowania");
+            return;
         }
         boolean isAuthenticated = ULC.authenticateUser(email, password);
         if (isAuthenticated) {

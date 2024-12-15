@@ -1,5 +1,6 @@
 package org.controller.gui.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -13,6 +14,7 @@ import org.gui.fx.LoginPanel;
 import java.io.IOException;
 
 public class AppMainWindowController {
+    public Button concertEditorButton;
     @FXML
     private Button userListButton;
     @FXML
@@ -29,7 +31,9 @@ public class AppMainWindowController {
     }
 
     private void updateUserVisibility() {
+
         userListButton.setVisible(user != null && "admin".equals(user.getRole()));
+        concertEditorButton.setVisible(user != null && "admin".equals(user.getRole()));
     }
 
     @FXML
@@ -54,19 +58,19 @@ public class AppMainWindowController {
     }
 
     public void handleProfileButton() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow/View/Profile.fxml"));
-        Pane profileView = loader.load();
-        borderPane.setCenter(profileView);
+       loadView("Profile.fxml");
     }
 
     public void handleUserListButton() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow/View/UserList.fxml"));
-        Pane userListView = loader.load();
-        borderPane.setCenter(userListView);
+        loadView("UserList.fxml");
     }
     private void loadView(String fileName) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow/View/" + fileName));
         Pane view = loader.load();
         borderPane.setCenter(view);
+    }
+
+    public void handleConcertEditorButton() throws IOException {
+        loadView("ConcertEditor.fxml");
     }
 }

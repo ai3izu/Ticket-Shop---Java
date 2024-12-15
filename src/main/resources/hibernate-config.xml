@@ -20,5 +20,6 @@
         <mapping class="org.db.hibernate.User"/>
         <mapping class="org.db.hibernate.Concert"/>
         <mapping class="org.db.hibernate.Ticket"/>
+        <mapping class="org.db.hibernate.Band"/>
     </session-factory>
 </hibernate-configuration>

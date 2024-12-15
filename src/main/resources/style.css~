@@ -27,18 +27,26 @@
 }
 
 .list-cell {
-    -fx-background-color: #34495e;
-    -fx-text-fill: white;
+    -fx-background-color: #34495e;  /* Kolor tła */
+    -fx-text-fill: white;            /* Kolor tekstu */
     -fx-padding: 10 15;
     -fx-border-color: transparent;
 }
 
+/* Wygląd zaznaczonego elementu */
 .list-cell:selected {
-    -fx-background-color: #8e44ad;
+    -fx-background-color: #8e44ad;  /* Kolor tła po zaznaczeniu */
     -fx-text-fill: white;
 }
 
+/* Wygląd komórki, która ma fokus */
 .list-cell:focused {
-    -fx-background-color: #8e44ad;
+    -fx-background-color: #8e44ad;  /* Kolor tła dla fokusu */
+    -fx-text-fill: white;
+}
+
+/* Opcjonalnie: efekt hover (gdy najeżdżamy myszką na element) */
+.list-cell:hover {
+    -fx-background-color: #9b59b6;  /* Kolor tła po najechaniu */
 }
 

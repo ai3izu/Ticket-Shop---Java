@@ -37,7 +37,8 @@ public class UserProfileController {
             }
         }
     }
-    private User retrieveUserDataFromDatabase(Integer userID) {
+
+    public User retrieveUserDataFromDatabase(Integer userID) {
         try (Session session = HibernateUtil.getSession()) {
             session.beginTransaction();
             User user = session.get(User.class, userID);
