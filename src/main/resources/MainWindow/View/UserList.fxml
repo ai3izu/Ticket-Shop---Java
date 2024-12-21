@@ -20,7 +20,7 @@
             <TableColumn fx:id="firstNameColumn" prefWidth="250.0" text="Imię"/>
             <TableColumn fx:id="lastNameColumn" prefWidth="250.0" text="Nazwisko"/>
             <TableColumn fx:id="emailColumn" prefWidth="440.0" text="Email"/>
-            <TableColumn fx:id="birthDateColumn" prefWidth="300.0" text="Data Urodzenia"/>
+            <TableColumn fx:id="birthDateColumn" prefWidth="290.0" text="Data Urodzenia"/>
         </columns>
         <VBox.margin>
             <Insets/>
@@ -29,6 +29,6 @@
 
     <Pagination fx:id="pagination" maxPageIndicatorCount="5" prefHeight="50.0"
                 style="-fx-page-information-visible: false;  -fx-font-size: 14px;-fx-border-radius: 15px;"
-                VBox.vgrow="NEVER">
+                VBox.vgrow="ALWAYS">
     </Pagination>
 </VBox>

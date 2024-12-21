@@ -33,7 +33,6 @@ public class AppMainWindowController {
         concertEditorButton.setVisible(user != null && "admin".equals(user.getRole()));
     }
 
-    @FXML
     public void handleExitButton() {
         Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();
@@ -50,24 +49,36 @@ public class AppMainWindowController {
         stage.centerOnScreen();
     }
 
+    @FXML
     public void handleMainPageButton() throws IOException {
         loadView("MainPage.fxml");
     }
 
     public void handleProfileButton() throws IOException {
-       loadView("Profile.fxml");
+        loadView("Profile.fxml");
     }
 
+
+    @FXML
     public void handleUserListButton() throws IOException {
         loadView("UserList.fxml");
     }
+
+    @FXML
+    public void handleConcertEditorButton() throws IOException {
+        loadView("ConcertEditor.fxml");
+    }
+
+    @FXML
+    public void handleTicketBuyButton() throws IOException {
+        loadView("ConcertTickets.fxml");
+    }
+
     private void loadView(String fileName) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow/View/" + fileName));
         Pane view = loader.load();
         borderPane.setCenter(view);
     }
 
-    public void handleConcertEditorButton() throws IOException {
-        loadView("ConcertEditor.fxml");
-    }
+
 }

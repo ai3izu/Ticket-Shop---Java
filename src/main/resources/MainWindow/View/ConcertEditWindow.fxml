@@ -78,7 +78,7 @@
         </HBox>
 
 
-        <TextField fx:id="editorSearchBandField" promptText="Szukaj zespołów..."
+        <TextField fx:id="editorSearchBandField" promptText="Wyszukaj zespół..."
                    style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-border-radius: 10; -fx-padding: 10 20; -fx-font-size: 16px; -fx-pref-width: 300;"/>
 
         <ListView fx:id="bandListView" prefHeight="300.0" prefWidth="300"
