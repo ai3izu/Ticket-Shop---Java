@@ -36,7 +36,6 @@ public class User {
         this.role = "user";
     }
 
-    // Table View Binding
     public IntegerProperty idProperty() {
         return new SimpleIntegerProperty(id);
     }
@@ -51,10 +50,6 @@ public class User {
 
     public StringProperty emailProperty() {
         return new SimpleStringProperty(email);
-    }
-
-    public StringProperty passwordProperty() {
-        return new SimpleStringProperty(password);
     }
 
     public ObjectProperty<Date> birthDateProperty() {

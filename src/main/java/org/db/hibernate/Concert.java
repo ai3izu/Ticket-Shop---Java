@@ -22,7 +22,7 @@ public class Concert {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "concert_bands",
             joinColumns = @JoinColumn(name = "concert_id"),

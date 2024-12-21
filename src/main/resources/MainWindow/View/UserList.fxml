@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
-<VBox alignment="TOP_CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.business.controller.UserListController">
-    <children>
-        <Label style="-fx-font-size: 30px; -fx-font-family: 'Roboto';  -fx-text-fill: white;" text="Lista Użytkowników">
-         <font>
-            <Font name="Roboto Thin" size="12.0" />
-         </font></Label>
-        <TableView fx:id="userTable" VBox.vgrow="ALWAYS">
-            <columns>
-                <TableColumn fx:id="idColumn" prefWidth="100.0" text="ID" />
-                <TableColumn fx:id="firstNameColumn" prefWidth="200.0" text="Imię" />
-                <TableColumn fx:id="lastNameColumn" prefWidth="200.0" text="Nazwisko" />
-                <TableColumn fx:id="emailColumn" prefWidth="300.0" text="Email" />
-                <TableColumn fx:id="passwordColumn" prefWidth="350.0" text="Hasło" />
-                <TableColumn fx:id="birthDateColumn" prefWidth="183.0" text="Data Urodzenia" />
-            </columns>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-        </TableView>
-
-        <Pagination fx:id="pagination" maxPageIndicatorCount="5" prefHeight="50.0" style="-fx-page-information-visible: false;  -fx-font-size: 14px;-fx-border-radius: 15px;" VBox.vgrow="NEVER">
-        </Pagination>
-    </children>
+<?import javafx.scene.text.Font?>
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.business.controller.UserListController">
     <VBox.margin>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="30.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="30.0"/>
     </VBox.margin>
+    <Label style="-fx-font-size: 30px; -fx-font-family: 'Roboto';  -fx-text-fill: white;" text="Lista Użytkowników">
+        <font>
+            <Font name="Roboto Thin" size="12.0"/>
+        </font>
+    </Label>
+    <TableView fx:id="userTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="100.0" text="ID"/>
+            <TableColumn fx:id="firstNameColumn" prefWidth="250.0" text="Imię"/>
+            <TableColumn fx:id="lastNameColumn" prefWidth="250.0" text="Nazwisko"/>
+            <TableColumn fx:id="emailColumn" prefWidth="440.0" text="Email"/>
+            <TableColumn fx:id="birthDateColumn" prefWidth="300.0" text="Data Urodzenia"/>
+        </columns>
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+    </TableView>
+
+    <Pagination fx:id="pagination" maxPageIndicatorCount="5" prefHeight="50.0"
+                style="-fx-page-information-visible: false;  -fx-font-size: 14px;-fx-border-radius: 15px;"
+                VBox.vgrow="NEVER">
+    </Pagination>
 </VBox>

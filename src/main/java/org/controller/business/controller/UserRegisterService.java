@@ -9,7 +9,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-public class UserRegisterController {
+public class UserRegisterService {
     public boolean registerUserToDB(User user) {
         if (!validateUserData(user)) {
             return false;
@@ -45,7 +45,12 @@ public class UserRegisterController {
     }
 
     private boolean validateUserData(User user) {
-        return Stream.of(user.getFirstName(), user.getLastName(), user.getEmail()).allMatch(field -> field != null && !field.isEmpty()) && user.getBirthDate() != null && validatePassword(user.getPassword());
+        return Stream.of(user.getFirstName(), user.getLastName()).allMatch(
+                field -> field != null && !field.isEmpty())
+                && user.getBirthDate() != null
+                && validatePassword(user.getPassword())
+                && validateEmail(user.getEmail()
+        );
     }
 
     private boolean validatePassword(String password) {
@@ -60,6 +65,5 @@ public class UserRegisterController {
             return false;
         }
         return true;
-
     }
 }

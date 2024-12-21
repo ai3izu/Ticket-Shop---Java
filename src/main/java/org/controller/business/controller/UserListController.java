@@ -8,6 +8,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import org.db.hibernate.HibernateUtil;
 import org.db.hibernate.User;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
 import java.util.List;
@@ -25,8 +26,7 @@ public class UserListController {
     private TableColumn<User,String>  lastNameColumn;
     @FXML
     private TableColumn<User,String>  emailColumn;
-    @FXML
-    private TableColumn<User,String>  passwordColumn;
+
     @FXML
     private TableColumn<User,String>  birthDateColumn;
     private List<User> fullUserList;
@@ -37,7 +37,6 @@ public class UserListController {
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
         lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
         emailColumn.setCellValueFactory(cellData -> cellData.getValue().emailProperty());
-        passwordColumn.setCellValueFactory(cellData -> cellData.getValue().passwordProperty());
         birthDateColumn.setCellValueFactory(cellData -> cellData.getValue().birthDateProperty().asString());
 
         loadUserList();
@@ -53,8 +52,8 @@ public class UserListController {
 
             loadPage(0);
             session.getTransaction().commit();
-        }catch (Exception e){
-            System.out.println("Błąd wczytywania listy użytkowników " + e.getMessage());
+        }catch (HibernateException e){
+            throw new RuntimeException("Błąd wczytywania listy użytkowników " + e.getMessage());
         }
     }
     private void loadPage(int pageIndex) {

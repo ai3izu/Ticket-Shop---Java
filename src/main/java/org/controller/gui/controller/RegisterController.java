@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import org.Main;
-import org.controller.business.controller.UserRegisterController;
+import org.controller.business.controller.UserRegisterService;
 import org.db.hibernate.User;
 import org.gui.fx.LoginPanel;
 import org.gui.fx.NotificationAlert;
@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 
 public class RegisterController {
-    private final UserRegisterController URC = new UserRegisterController();
+    private final UserRegisterService URS = new UserRegisterService();
     private final NotificationAlert ALERT = new NotificationAlert();
     @FXML
     private TextField firstNameField;
@@ -28,7 +28,6 @@ public class RegisterController {
     private TextField emailField;
     @FXML
     private TextField passwordField;
-    private final String regex = "^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=.*\\d).*$";
 
     public void handleBackButtonAction() throws Exception {
         LoginPanel loginPanel = new LoginPanel(Main.getPrimaryStage());
@@ -57,7 +56,7 @@ public class RegisterController {
         registeredUser.setPassword(password);
 
 
-        boolean isRegistered = URC.registerUserToDB(registeredUser);
+        boolean isRegistered = URS.registerUserToDB(registeredUser);
         if (isRegistered) {
             ALERT.showAlert("Sukces", "rejestracja przebiegla pomyslnie");
             LoginPanel loginPanel = new LoginPanel(Main.getPrimaryStage());
@@ -70,6 +69,7 @@ public class RegisterController {
             ALERT.showAlert("Bład", "Hasło powinno zawierać conajmniej 8 znaków.");
             return false;
         }
+        String regex = "^(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=.*\\d).*$";
         if (!Pattern.matches(regex,passwordField.getText())){
             ALERT.showAlert("Błąd", "Hasło powinno zawierać:\n - co najmniej 1 znak specjalny,\n - co najmniej 1 wielką literę,\n - co najmniej 1 cyfrę.");
             return false;

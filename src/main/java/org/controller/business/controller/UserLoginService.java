@@ -7,7 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.mindrot.jbcrypt.BCrypt;
 
-public class UserLoginController {
+public class UserLoginService {
     public boolean authenticateUser(String email, String password) {
         Session session = HibernateUtil.getSession();
         try {

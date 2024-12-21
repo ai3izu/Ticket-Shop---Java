@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox alignment="CENTER" prefHeight="900" prefWidth="800" spacing="20.0"
+      style="-fx-background-color: #1b2838; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.controller.gui.controller.EditorWindowController">
+
+    <Label style="-fx-font-size: 30px;  -fx-text-fill: white;" text="Edytuj Koncert">
+        <font>
+            <Font name="Roboto Light" size="30.0"/>
+        </font>
+    </Label>
+
+    <VBox alignment="TOP_CENTER" spacing="20.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+
+        <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+            <Label style="-fx-text-fill: white;" text="Nazwa koncertu:">
+                <font>
+                    <Font name="Roboto Thin" size="15.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="concertNameField" prefHeight="45.0" prefWidth="315.0" promptText="Nazwa koncertu"
+                       style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-border-radius: 10; -fx-padding: 15 20 15 20; -fx-hgrow: ALWAYS;">
+                <HBox.margin>
+                    <Insets left="5.0"/>
+                </HBox.margin>
+            </TextField>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+            <Label style="-fx-text-fill: white;" text="Godzina koncertu:">
+                <font>
+                    <Font name="Roboto Thin" size="15.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="concertTimeField" prefHeight="45.0" prefWidth="315.0"
+                       promptText="Godzina koncertu (HH:mm)"
+                       style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-border-radius: 10; -fx-padding: 15 20 15 20; -fx-hgrow: ALWAYS;">
+                <HBox.margin>
+                    <Insets/>
+                </HBox.margin>
+            </TextField>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+            <Label style="-fx-text-fill: white;" text="Cena biletu:">
+                <font>
+                    <Font name="Roboto Thin" size="15.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="concertTicketPriceField" prefHeight="34.0" prefWidth="315.0" promptText="Cena biletu"
+                       style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-border-radius: 10; -fx-padding: 15 20 15 20; -fx-hgrow: ALWAYS;"/>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+            <Label style="-fx-text-fill: white;" text="Dostępne bilety:">
+                <font>
+                    <Font name="Roboto Thin" size="15.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="concertAvailableTicketsField" prefHeight="45.0" prefWidth="315.0"
+                       promptText="Dostępne bilety"
+                       style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-border-radius: 10; -fx-padding: 15 20 15 20; -fx-hgrow: ALWAYS;"/>
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+            <Label style="-fx-text-fill: white;" text="Data koncertu:">
+                <font>
+                    <Font name="Roboto Thin" size="15.0"/>
+                </font>
+            </Label>
+            <DatePicker fx:id="concertDateField" prefHeight="45.0" prefWidth="315.0" promptText="Data koncertu"
+                        style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-border-radius: 10; -fx-padding: 15 20 15 20; -fx-hgrow: ALWAYS;"/>
+        </HBox>
+
+
+        <TextField fx:id="editorSearchBandField" promptText="Szukaj zespołów..."
+                   style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-border-radius: 10; -fx-padding: 10 20; -fx-font-size: 16px; -fx-pref-width: 300;"/>
+
+        <ListView fx:id="bandListView" prefHeight="300.0" prefWidth="300"
+                  style="-fx-background-color: #34495e; -fx-text-fill: white; -fx-border-radius: 10; -fx-padding: 10 15 10 15; -fx-font-size: 18px; -fx-cell-size: 50px;"
+                  stylesheets="@../../style.css"/>
+
+        <HBox alignment="CENTER" spacing="20.0">
+            <Button onAction="#handleSaveChangesButton" prefHeight="52.0" prefWidth="139.0"
+                    style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 15 25 15 25;"
+                    text="Zapisz">
+                <font>
+                    <Font name="Roboto Thin" size="16.0"/>
+                </font>
+            </Button>
+            <Button onAction="#handleCancelButton" prefHeight="52.0" prefWidth="135.0"
+                    style="-fx-background-color: #2980b9; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 15 25 15 25;"
+                    text="Anuluj">
+                <font>
+                    <Font name="Roboto Thin" size="16.0"/>
+                </font>
+            </Button>
+        </HBox>
+    </VBox>
+
+</VBox>

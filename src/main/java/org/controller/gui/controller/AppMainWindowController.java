@@ -1,6 +1,5 @@
 package org.controller.gui.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -21,8 +20,6 @@ public class AppMainWindowController {
     private Button exitButton;
     @FXML
     private BorderPane borderPane;
-    @FXML
-    private Button mainPageButton;
     private User user;
 
     public void setUserView(User user) {

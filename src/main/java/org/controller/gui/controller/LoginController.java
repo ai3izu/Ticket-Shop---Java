@@ -6,7 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.Main;
-import org.controller.business.controller.UserLoginController;
+import org.controller.business.controller.UserLoginService;
 import org.db.hibernate.User;
 import org.gui.fx.AppMainWindow;
 import org.gui.fx.NotificationAlert;
@@ -15,7 +15,7 @@ import org.gui.fx.RegisterPanel;
 import java.io.IOException;
 
 public class LoginController {
-    private final UserLoginController ULC = new UserLoginController();
+    private final UserLoginService ULS = new UserLoginService();
     private final NotificationAlert ALERT = new NotificationAlert();
     @FXML
     private Button exitButton;
@@ -42,9 +42,9 @@ public class LoginController {
             ALERT.showAlert("Błąd", "Niepoprawne dane logowania");
             return;
         }
-        boolean isAuthenticated = ULC.authenticateUser(email, password);
+        boolean isAuthenticated = ULS.authenticateUser(email, password);
         if (isAuthenticated) {
-            User loggedUser = ULC.getLoggedInUser();
+            User loggedUser = ULS.getLoggedInUser();
             AppMainWindow appMainWindow = new AppMainWindow(Main.getPrimaryStage());
             appMainWindow.showMainAppWindow(loggedUser);
         } else {

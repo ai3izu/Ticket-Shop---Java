@@ -7,7 +7,7 @@ import org.db.hibernate.User;
 import org.db.hibernate.UserSession;
 import org.hibernate.Session;
 
-public class UserProfileController {
+public class UserProfileService {
     @FXML
     public Label welcomeLabel;
     @FXML
