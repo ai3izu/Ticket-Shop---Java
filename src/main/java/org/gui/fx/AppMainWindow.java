@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.controller.gui.controller.AppMainWindowController;
+import org.controller.gui.controller.MainWindowController;
 import org.db.hibernate.User;
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ public class AppMainWindow {
         FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("/AppMainWindow.fxml")));
         Parent root = loader.load();
 
-        AppMainWindowController controller = loader.getController();
+        MainWindowController controller = loader.getController();
         controller.setUserView(user);
 
         Scene scene = stage.getScene();

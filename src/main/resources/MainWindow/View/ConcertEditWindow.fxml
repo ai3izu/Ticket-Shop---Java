@@ -7,7 +7,7 @@
 <VBox alignment="CENTER" prefHeight="900" prefWidth="800" spacing="20.0"
       style="-fx-background-color: #1b2838; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/17.0.2-ea"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.controller.gui.controller.EditorWindowController">
+      fx:controller="org.controller.gui.controller.ConcertDataEditorController">
 
     <Label style="-fx-font-size: 30px;  -fx-text-fill: white;" text="Edytuj Koncert">
         <font>
@@ -102,5 +102,4 @@
             </Button>
         </HBox>
     </VBox>
-
 </VBox>

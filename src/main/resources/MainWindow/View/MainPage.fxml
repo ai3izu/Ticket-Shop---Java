@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.controller.gui.controller.AppMainWindowController"
+      fx:controller="org.controller.gui.controller.MainWindowController"
       style="-fx-background-color: transparent;">
     <Label text="Strona Główna" style="-fx-font-size: 40px; -fx-font-family: 'Roboto'; -fx-font-weight: 100;"
            textFill="WHITE"/>

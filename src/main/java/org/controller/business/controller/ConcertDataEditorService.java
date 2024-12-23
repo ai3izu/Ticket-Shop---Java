@@ -16,11 +16,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Setter
-public class EditorWindowService {
+public class ConcertDataEditorService {
 
     private final Concert currentConcert;
 
-    public EditorWindowService(Concert currentConcert) {
+    public ConcertDataEditorService(Concert currentConcert) {
         this.currentConcert = currentConcert;
     }
 

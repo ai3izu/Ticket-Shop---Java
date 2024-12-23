@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: transparent; -fx-padding: 20px;"
+      xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.controller.business.controller.UserProfileService">
 
-<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: transparent; -fx-padding: 20px;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.business.controller.UserProfileService">
-
-    <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" style="-fx-font-size: 30px; -fx-text-fill: white;" VBox.vgrow="ALWAYS">
+    <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER"
+           style="-fx-font-size: 30px; -fx-text-fill: white;" VBox.vgrow="ALWAYS">
         <font>
-            <Font name="Roboto Thin" size="30.0" />
+            <Font name="Roboto Thin" size="30.0"/>
         </font>
     </Label>
 
@@ -18,55 +21,60 @@
 
         <VBox alignment="TOP_CENTER" prefWidth="350.0" spacing="20.0" HBox.hgrow="ALWAYS">
             <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                <Image url="@../../images/logo-sleep-ticket.png" />
-            <VBox.margin>
-               <Insets top="15.0" />
-            </VBox.margin>
+                <Image url="@../../images/logo-sleep-ticket.png"/>
+                <VBox.margin>
+                    <Insets top="15.0"/>
+                </VBox.margin>
             </ImageView>
             <Label text="Twoje Dane" textFill="#fffafa">
                 <font>
-                    <Font name="Roboto Thin" size="25.0" />
+                    <Font name="Roboto Thin" size="25.0"/>
                 </font>
             </Label>
             <VBox alignment="CENTER" spacing="10.0">
                 <Label fx:id="nameLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
                     <font>
-                        <Font name="Roboto Light" size="14.0" />
-                    </font></Label>
+                        <Font name="Roboto Light" size="14.0"/>
+                    </font>
+                </Label>
                 <Label fx:id="surnameLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
                     <font>
-                        <Font name="Roboto Thin" size="14.0" />
-                    </font></Label>
+                        <Font name="Roboto Thin" size="14.0"/>
+                    </font>
+                </Label>
                 <Label fx:id="emailLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
                     <font>
-                        <Font name="Roboto Thin" size="14.0" />
-                    </font></Label>
+                        <Font name="Roboto Thin" size="14.0"/>
+                    </font>
+                </Label>
                 <Label fx:id="dateLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
                     <font>
-                        <Font name="Roboto Thin" size="14.0" />
-                    </font></Label>
+                        <Font name="Roboto Thin" size="14.0"/>
+                    </font>
+                </Label>
                 <Label fx:id="roleLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
                     <font>
-                        <Font name="Roboto Thin" size="14.0" />
-                    </font></Label>
+                        <Font name="Roboto Thin" size="14.0"/>
+                    </font>
+                </Label>
             </VBox>
         </VBox>
 
-        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" minWidth="-Infinity" style="-fx-background: transparent; -fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" minWidth="-Infinity"
+                    style="-fx-background: transparent; -fx-background-color: transparent;" HBox.hgrow="ALWAYS">
             <VBox alignment="TOP_CENTER">
                 <Label style="-fx-font-size: 25px;" text="Twoje bilety" textFill="#fffafa">
                     <font>
-                        <Font name="Roboto Thin" size="25.0" />
+                        <Font name="Roboto Thin" size="25.0"/>
                     </font>
                 </Label>
-                <VBox fx:id="ticketsContainer" maxWidth="1.7976931348623157E308" spacing="15.0" style="-fx-padding: 10px; -fx-background-color: transparent;">
+                <VBox fx:id="ticketsContainer" maxWidth="1.7976931348623157E308" spacing="15.0"
+                      style="-fx-padding: 10px; -fx-background-color: transparent;">
                 </VBox>
             </VBox>
             <HBox.margin>
-                <Insets left="50.0" />
+                <Insets left="50.0"/>
             </HBox.margin>
         </ScrollPane>
-
     </HBox>
-
 </VBox>

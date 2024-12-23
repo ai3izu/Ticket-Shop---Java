@@ -14,7 +14,7 @@ import java.sql.Time;
 import java.time.LocalDate;
 import java.util.List;
 
-public class ConcertEditorService {
+public class AdminEditorService {
 
     public ObservableList<String> loadBandNamesFromDB() {
         ObservableList<String> bandNames = FXCollections.observableArrayList();

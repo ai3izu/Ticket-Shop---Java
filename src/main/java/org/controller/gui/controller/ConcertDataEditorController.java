@@ -8,13 +8,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.controller.business.controller.EditorWindowService;
+import org.controller.business.controller.ConcertDataEditorService;
 import org.db.hibernate.Concert;
 import org.gui.fx.NotificationAlert;
 
 import java.time.LocalDate;
 
-public class EditorWindowController {
+public class ConcertDataEditorController {
 
     public TextField editorSearchBandField;
     @FXML
@@ -31,11 +31,11 @@ public class EditorWindowController {
     private ListView<String> bandListView;
     private ObservableList<String> bandNames = FXCollections.observableArrayList();
 
-    private EditorWindowService EWS;
+    private  ConcertDataEditorService CDES;
     private final NotificationAlert ALERT = new NotificationAlert();
 
     public void initializeWithConcert(Concert concert) {
-        this.EWS = new EditorWindowService(concert);
+        this.CDES = new ConcertDataEditorService(concert);
 
         bandListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         concertNameField.setText(concert.getName());
@@ -49,10 +49,10 @@ public class EditorWindowController {
     }
 
     private void loadBandsFromDB(Concert concert) {
-         bandNames = EWS.loadBandsFromDB();
+         bandNames = CDES.loadBandsFromDB();
         bandListView.setItems(bandNames);
 
-        ObservableList<String> assignedBandNames = EWS.getAssignedBandNames(concert);
+        ObservableList<String> assignedBandNames = CDES.getAssignedBandNames(concert);
         for (String bandName : assignedBandNames) {
             bandListView.getSelectionModel().select(bandName);
         }
@@ -82,7 +82,7 @@ public class EditorWindowController {
         }
 
         ObservableList<String> selectedBands = bandListView.getSelectionModel().getSelectedItems();
-        EWS.saveConcertChanges(concertName, concertTime, ticketPrice, availableTickets, concertDate, selectedBands);
+        CDES.saveConcertChanges(concertName, concertTime, ticketPrice, availableTickets, concertDate, selectedBands);
 
         Stage stage = (Stage) concertNameField.getScene().getWindow();
         stage.close();

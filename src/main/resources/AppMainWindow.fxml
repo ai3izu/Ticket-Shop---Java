@@ -7,7 +7,7 @@
 <BorderPane fx:id="borderPane"
             style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e);"
             stylesheets="style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.controller.gui.controller.AppMainWindowController">
+            fx:controller="org.controller.gui.controller.MainWindowController">
     <left>
         <VBox alignment="CENTER" spacing="20.0"
               style="-fx-background-color: #1b2838; -fx-padding: 10px 20px 20px 20px; -fx-margin-top: 20px;">
@@ -20,7 +20,7 @@
                         <Insets top="15.0"/>
                     </VBox.margin>
                 </Button>
-                <Button  mnemonicParsing="false" onAction="#handleTicketBuyButton" prefHeight="50.0" prefWidth="200.0"
+                <Button mnemonicParsing="false" onAction="#handleTicketBuyButton" prefHeight="50.0" prefWidth="200.0"
                         style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
                         text="Koncerty"/>
                 <Button mnemonicParsing="false" onAction="#handleProfileButton"

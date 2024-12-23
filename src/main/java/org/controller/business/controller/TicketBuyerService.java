@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 
 import java.sql.Timestamp;
 
-public class TicketBuyService {
+public class TicketBuyerService {
     public boolean buyTicket(Concert concert, int userID, String ticketType, String seatNumber) {
         if (concert.getAvailableTickets() <= 0) {
             return false;

@@ -9,17 +9,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Callback;
-import org.controller.business.controller.ConcertEditorService;
+import org.controller.business.controller.AdminEditorService;
 import org.db.hibernate.Concert;
 import org.gui.fx.NotificationAlert;
 
 import java.io.IOException;
 import java.time.LocalDate;
 
-public class ConcertEditorController {
+public class AdminEditorController {
 
     private final NotificationAlert ALERT = new NotificationAlert();
-    private final ConcertEditorService CS = new ConcertEditorService();
+    private final AdminEditorService AES = new AdminEditorService();
     private final ObservableList<String> allBandNames = FXCollections.observableArrayList();
     private final ObservableList<Concert> allConcerts = FXCollections.observableArrayList();
 
@@ -59,12 +59,12 @@ public class ConcertEditorController {
     }
 
     private void loadBandsFromDB() {
-        allBandNames.setAll(CS.loadBandNamesFromDB());
+        allBandNames.setAll(AES.loadBandNamesFromDB());
         bandListView.setItems(allBandNames);
     }
 
     public void loadConcertsFromDB() {
-        allConcerts.setAll(CS.loadConcertsFromDB());
+        allConcerts.setAll(AES.loadConcertsFromDB());
         concertEditListView.setCellFactory(new Callback<ListView<Concert>, ListCell<Concert>>() {
             @Override
             public ListCell<Concert> call(ListView<Concert> param) {
@@ -97,7 +97,7 @@ public class ConcertEditorController {
             return;
         }
 
-        boolean success = CS.saveConcert(concertName, concertTime, concertTicketPrice, concertAvailableTickets, concertDate, selectedBands);
+        boolean success = AES.saveConcert(concertName, concertTime, concertTicketPrice, concertAvailableTickets, concertDate, selectedBands);
         if (success) {
             ALERT.showAlert("Sukces", "Koncert został zapisany.");
             loadConcertsFromDB();
@@ -154,7 +154,7 @@ public class ConcertEditorController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainWindow/View/ConcertEditWindow.fxml"));
             Parent root = loader.load();
 
-            EditorWindowController editorController = loader.getController();
+            ConcertDataEditorController editorController = loader.getController();
             editorController.initializeWithConcert(concert);
 
 

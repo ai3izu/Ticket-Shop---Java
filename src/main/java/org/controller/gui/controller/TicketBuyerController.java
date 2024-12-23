@@ -11,18 +11,18 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import org.controller.business.controller.ConcertEditorService;
-import org.controller.business.controller.TicketBuyService;
+import org.controller.business.controller.AdminEditorService;
+import org.controller.business.controller.TicketBuyerService;
 import org.db.hibernate.Concert;
 import org.db.hibernate.UserSession;
 import org.gui.fx.NotificationAlert;
 
 import java.util.List;
 
-public class TickerBuyController {
+public class TicketBuyerController {
 
-    private final ConcertEditorService CES = new ConcertEditorService();
-    private final TicketBuyService TBS = new TicketBuyService();
+    private final AdminEditorService CES = new AdminEditorService();
+    private final TicketBuyerService TBS = new TicketBuyerService();
     private final NotificationAlert ALERT = new NotificationAlert();
     @FXML
     private TextField searchBar;

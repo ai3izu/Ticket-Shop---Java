@@ -9,10 +9,7 @@ public class Main extends Application {
     @Getter
     private static Stage primaryStage;
 
-    public static void main(String[] args) {
-        launch(args);
-        // update exception handlers
-    }
+    public static void main(String[] args) {launch(args);}
 
     @Override
     public void start(Stage primaryStage) throws Exception {

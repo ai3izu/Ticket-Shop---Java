@@ -9,7 +9,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
-public class UserRegisterService {
+public class RegisterService {
     public boolean registerUserToDB(User user) {
         if (!validateUserData(user)) {
             return false;

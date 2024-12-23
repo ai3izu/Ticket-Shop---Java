@@ -12,7 +12,7 @@ import org.gui.fx.LoginPanel;
 
 import java.io.IOException;
 
-public class AppMainWindowController {
+public class MainWindowController {
     public Button concertEditorButton;
     @FXML
     private Button userListButton;

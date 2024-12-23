@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import org.Main;
-import org.controller.business.controller.UserRegisterService;
+import org.controller.business.controller.RegisterService;
 import org.db.hibernate.User;
 import org.gui.fx.LoginPanel;
 import org.gui.fx.NotificationAlert;
@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 
 public class RegisterController {
-    private final UserRegisterService URS = new UserRegisterService();
+    private final RegisterService RS = new RegisterService();
     private final NotificationAlert ALERT = new NotificationAlert();
     @FXML
     private TextField firstNameField;
@@ -56,7 +56,7 @@ public class RegisterController {
         registeredUser.setPassword(password);
 
 
-        boolean isRegistered = URS.registerUserToDB(registeredUser);
+        boolean isRegistered = RS.registerUserToDB(registeredUser);
         if (isRegistered) {
             ALERT.showAlert("Sukces", "rejestracja przebiegla pomyslnie");
             LoginPanel loginPanel = new LoginPanel(Main.getPrimaryStage());

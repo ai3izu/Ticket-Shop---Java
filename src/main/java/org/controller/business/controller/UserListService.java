@@ -4,10 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Pagination;
-import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.input.ScrollEvent;
 import org.db.hibernate.HibernateUtil;
 import org.db.hibernate.User;
 import org.hibernate.HibernateException;
@@ -15,7 +13,7 @@ import org.hibernate.Session;
 
 import java.util.List;
 
-public class UserListController {
+public class UserListService {
     @FXML
     public Pagination pagination;
     @FXML
