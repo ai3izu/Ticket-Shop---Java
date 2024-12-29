@@ -8,12 +8,12 @@
 <?import javafx.scene.text.*?>
 <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: transparent; -fx-padding: 20px;"
       xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.controller.business.controller.UserProfileService">
+      fx:controller="org.controller.gui.controller.UserProfileController">
 
     <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER"
-           style="-fx-font-size: 30px; -fx-text-fill: white;" VBox.vgrow="ALWAYS">
+           style="-fx-font-size: 40px; -fx-text-fill: white;" VBox.vgrow="ALWAYS">
         <font>
-            <Font name="Roboto Thin" size="30.0"/>
+            <Font name="Roboto Thin"/>
         </font>
     </Label>
 
@@ -26,35 +26,40 @@
                     <Insets top="15.0"/>
                 </VBox.margin>
             </ImageView>
-            <Label text="Twoje Dane" textFill="#fffafa">
+            <Label text="Twoje Dane" style="-fx-font-size: 30px;" textFill="#fffafa">
                 <font>
-                    <Font name="Roboto Thin" size="25.0"/>
+                    <Font name="Roboto Thin" size="30.0"/>
                 </font>
             </Label>
             <VBox alignment="CENTER" spacing="10.0">
-                <Label fx:id="nameLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
+                <Label fx:id="nameLabel"
+                       style="-fx-font-size: 22px; -fx-margin-bottom: 10px; -fx-text-fill: white; -fx-background-color: #1b2838;">
                     <font>
-                        <Font name="Roboto Light" size="14.0"/>
+                        <Font name="Roboto Light" size="22.0"/>
                     </font>
                 </Label>
-                <Label fx:id="surnameLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
+                <Label fx:id="surnameLabel"
+                       style="-fx-font-size: 22px; -fx-margin-bottom: 10px; -fx-text-fill: white; -fx-background-color: #1b2838;">
                     <font>
-                        <Font name="Roboto Thin" size="14.0"/>
+                        <Font name="Roboto Thin" size="22.0"/>
                     </font>
                 </Label>
-                <Label fx:id="emailLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
+                <Label fx:id="emailLabel"
+                       style="-fx-font-size: 22px; -fx-margin-bottom: 10px; -fx-text-fill: white; -fx-background-color: #1b2838;">
                     <font>
-                        <Font name="Roboto Thin" size="14.0"/>
+                        <Font name="Roboto Thin" size="22.0"/>
                     </font>
                 </Label>
-                <Label fx:id="dateLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
+                <Label fx:id="dateLabel"
+                       style="-fx-font-size: 22px; -fx-margin-bottom: 10px; -fx-text-fill: white; -fx-background-color: #1b2838;">
                     <font>
-                        <Font name="Roboto Thin" size="14.0"/>
+                        <Font name="Roboto Thin" size="22.0"/>
                     </font>
                 </Label>
-                <Label fx:id="roleLabel" style="-fx-font-size: 18px; -fx-text-fill: white;">
+                <Label fx:id="roleLabel"
+                       style="-fx-font-size: 22px; -fx-text-fill: white; -fx-background-color: #1b2838;">
                     <font>
-                        <Font name="Roboto Thin" size="14.0"/>
+                        <Font name="Roboto Thin" size="22.0"/>
                     </font>
                 </Label>
             </VBox>

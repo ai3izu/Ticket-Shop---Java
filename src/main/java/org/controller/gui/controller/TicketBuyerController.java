@@ -89,6 +89,7 @@ public class TicketBuyerController {
 
         Label seatNumberLabel = new Label("Numer siedzenia:");
         seatNumberLabel.setStyle("-fx-text-fill: #ffffff;");
+
         TextField seatNumberField = new TextField();
         seatNumberField.setPromptText("np. A12");
         seatNumberField.setDisable(true);
@@ -107,20 +108,21 @@ public class TicketBuyerController {
 
         Button buyButton = new Button("Kup Bilet");
         buyButton.setStyle("-fx-background-color: #2980b9; -fx-border-radius: 10; -fx-text-fill: #ffffff; -fx-padding: 10px 20px;");
-        buyButton.setOnAction(event -> handleTicketPurchase(concert, ticketsLabel, ticketTypeChoiceBox.getValue(), seatNumberField.getText()));
+
+        if (concert.getAvailableTickets() <= 0) {
+            buyButton.setDisable(true);
+            ticketsLabel.setText("Brak dostępnych biletów");
+        } else {
+            buyButton.setOnAction(event -> handleTicketPurchase(concert, ticketsLabel, ticketTypeChoiceBox.getValue(), seatNumberField.getText()));
+        }
 
         concertCard.setAlignment(Pos.CENTER_LEFT);
         concertCard.getChildren().addAll(topRow, middleRow, priceRow, buyButton);
-
 
         return concertCard;
     }
 
     private void handleTicketPurchase(Concert concert, Label ticketsLabel, String ticketType, String seatNumber) {
-        if (concert.getAvailableTickets() <= 0) {
-            ticketsLabel.setText("Brak dostępnych biletów");
-            return;
-        }
         String mappedTicketType;
         if ("Siedzący".equals(ticketType)) {
             mappedTicketType = "SEATED";

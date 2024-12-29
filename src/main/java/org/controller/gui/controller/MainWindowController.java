@@ -3,17 +3,33 @@ package org.controller.gui.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.Main;
+import org.controller.business.controller.MiscService;
+import org.controller.business.controller.RegisterService;
+import org.db.hibernate.Concert;
 import org.db.hibernate.User;
 import org.gui.fx.LoginPanel;
 
 import java.io.IOException;
+import java.util.List;
 
 public class MainWindowController {
-    public Button concertEditorButton;
+    private final MiscService MS = new MiscService();
+    @FXML
+    private VBox popularConcertsVBox;
+    @FXML
+    private Label availableConcertsLabel;
+    @FXML
+    private Label registeredUsersLabel;
+    @FXML
+    private Button concertEditorButton;
+    @FXML
+    private Button boughtTicketsButton;
     @FXML
     private Button userListButton;
     @FXML
@@ -26,6 +42,11 @@ public class MainWindowController {
         this.user = user;
         updateUserVisibility();
     }
+
+    public void initialize() {
+        updateDashboard();
+    }
+
 
     private void updateUserVisibility() {
 
@@ -66,7 +87,7 @@ public class MainWindowController {
 
     @FXML
     public void handleConcertEditorButton() throws IOException {
-        loadView("ConcertEditor.fxml");
+        loadView("AdminEditor.fxml");
     }
 
     @FXML
@@ -80,5 +101,19 @@ public class MainWindowController {
         borderPane.setCenter(view);
     }
 
+    private void updateDashboard() {
+        int registeredUsers = MS.getRegisteredUsersCount();
+        registeredUsersLabel.setText("Liczba zarejestrowanych użytkowników: " + registeredUsers);
 
+        int availableConcerts = MS.getConcertsCount();
+        availableConcertsLabel.setText("Liczba dostępnych koncertów: " + availableConcerts);
+
+        List<Concert> popularConcerts = MS.popularConcerts(3);
+        popularConcertsVBox.getChildren().clear();
+        for (Concert popularConcert : popularConcerts) {
+            Label popularConcertLabel = new Label(popularConcert.getName());
+            popularConcertLabel.setStyle("-fx-font-size: 22px; -fx-font-family: 'Roboto'; -fx-text-fill: WHITE;");
+            popularConcertsVBox.getChildren().add(popularConcertLabel);
+        }
+    }
 }
