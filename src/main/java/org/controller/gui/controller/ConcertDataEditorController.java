@@ -88,7 +88,6 @@ public class ConcertDataEditorController {
         stage.close();
     }
 
-    @FXML
     public void handleCancelButton() {
         Stage stage = (Stage) concertNameField.getScene().getWindow();
         stage.close();

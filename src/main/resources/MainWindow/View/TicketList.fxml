@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.controller.gui.controller.TicketListController">
+    <VBox.margin>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="30.0"/>
+    </VBox.margin>
+    <Label style="-fx-font-size: 30px; -fx-font-family: 'Roboto';  -fx-text-fill: white;" text="Lista Biletów">
+        <font>
+            <Font name="Roboto Thin" size="30.0"/>
+        </font>
+    </Label>
+    <HBox alignment="CENTER_LEFT" spacing="10.0">
+        <TextField fx:id="searchBar" prefWidth="250.0" promptText="Wprowadź imię lub e-mail">
+            <font>
+                <Font name="Roboto Thin" size="16.0"/>
+            </font>
+            <HBox.margin>
+                <Insets left="25.0"/>
+            </HBox.margin>
+        </TextField>
+    </HBox>
+    <TableView fx:id="ticketTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="ticketIdColumn" prefWidth="100.0" text="ID Biletu"/>
+            <TableColumn fx:id="concertNameColumn" prefWidth="250.0" text="Nazwa Koncertu"/>
+            <TableColumn fx:id="firstNameColumn" prefWidth="200.0" text="Imię"/>
+            <TableColumn fx:id="lastNameColumn" prefWidth="200.0" text="Nazwisko"/>
+            <TableColumn fx:id="emailColumn" prefWidth="300.0" text="Email"/>
+            <TableColumn fx:id="purchasedDateColumn" prefWidth="287.0" text="Data Zakupu"/>
+        </columns>
+        <VBox.margin>
+            <Insets/>
+        </VBox.margin>
+    </TableView>
+
+    <Pagination fx:id="pagination" maxPageIndicatorCount="5"
+                style="-fx-page-information-visible: false;  -fx-font-size: 14px;-fx-border-radius: 15px;"
+                VBox.vgrow="ALWAYS">
+    </Pagination>
+</VBox>

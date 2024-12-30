@@ -33,7 +33,6 @@ public class RegisterController {
         LoginPanel loginPanel = new LoginPanel(Main.getPrimaryStage());
         loginPanel.showLoginPanel();
     }
-
     public void handleRegisterButtonAction() throws Exception {
         String firstName = firstNameField.getText();
         String lastName = lastNameField.getText();
@@ -54,7 +53,6 @@ public class RegisterController {
         registeredUser.setBirthDate(Date.valueOf(birthDate));
         registeredUser.setEmail(email);
         registeredUser.setPassword(password);
-
 
         boolean isRegistered = RS.registerUserToDB(registeredUser);
         if (isRegistered) {

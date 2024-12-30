@@ -31,9 +31,8 @@ public class UserProfileController {
 
 
     public void initialize() {
-
-
         Integer userID = UserSession.getLoggedInUserId();
+
         if (userID != null) {
             User currentUser = UPS.retrieveUserDataFromDatabase(userID);
             if (currentUser != null) {

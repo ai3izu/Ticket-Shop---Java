@@ -1,5 +1,7 @@
 package org.db.hibernate;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,11 +25,7 @@ public class Concert {
     private String name;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "concert_bands",
-            joinColumns = @JoinColumn(name = "concert_id"),
-            inverseJoinColumns = @JoinColumn(name = "band_id")
-    )
+    @JoinTable(name = "concert_bands", joinColumns = @JoinColumn(name = "concert_id"), inverseJoinColumns = @JoinColumn(name = "band_id"))
     private Set<Band> bands = new HashSet<>();
 
     @Column(name = "date", nullable = false)
@@ -44,4 +42,8 @@ public class Concert {
 
     @OneToMany(mappedBy = "concert", cascade = CascadeType.ALL)
     private Set<Ticket> tickets;
+
+    public StringProperty nameProperty() {
+        return new SimpleStringProperty(name);
+    }
 }

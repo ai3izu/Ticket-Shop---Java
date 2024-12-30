@@ -2,7 +2,6 @@ package org.controller.business.controller;
 
 import org.db.hibernate.HibernateUtil;
 import org.db.hibernate.User;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.mindrot.jbcrypt.BCrypt;

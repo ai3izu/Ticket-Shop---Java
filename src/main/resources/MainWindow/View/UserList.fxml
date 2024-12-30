@@ -11,7 +11,7 @@
     </VBox.margin>
     <Label style="-fx-font-size: 30px; -fx-font-family: 'Roboto';  -fx-text-fill: white;" text="Lista Użytkowników">
         <font>
-            <Font name="Roboto Thin" size="12.0"/>
+            <Font name="Roboto Thin" size="30.0"/>
         </font>
     </Label>
     <TableView fx:id="userTable" VBox.vgrow="ALWAYS">

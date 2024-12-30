@@ -28,9 +28,6 @@ public class UserListController {
     @FXML
     private TableColumn<User, String> birthDateColumn;
 
-
-
-
     public void initialize() {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());

@@ -2,6 +2,7 @@ package org.controller.gui.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
@@ -10,7 +11,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.Main;
 import org.controller.business.controller.MiscService;
-import org.controller.business.controller.RegisterService;
 import org.db.hibernate.Concert;
 import org.db.hibernate.User;
 import org.gui.fx.LoginPanel;
@@ -29,8 +29,6 @@ public class MainWindowController {
     @FXML
     private Button concertEditorButton;
     @FXML
-    private Button boughtTicketsButton;
-    @FXML
     private Button userListButton;
     @FXML
     private Button exitButton;
@@ -47,7 +45,6 @@ public class MainWindowController {
         updateDashboard();
     }
 
-
     private void updateUserVisibility() {
 
         userListButton.setVisible(user != null && "admin".equals(user.getRole()));
@@ -59,7 +56,6 @@ public class MainWindowController {
         stage.close();
     }
 
-    @FXML
     public void handleLogoutButton() throws IOException {
         LoginPanel loginPanel = new LoginPanel(Main.getPrimaryStage());
         loginPanel.showLoginPanel();
@@ -70,7 +66,6 @@ public class MainWindowController {
         stage.centerOnScreen();
     }
 
-    @FXML
     public void handleMainPageButton() throws IOException {
         loadView("MainPage.fxml");
     }
@@ -79,20 +74,20 @@ public class MainWindowController {
         loadView("Profile.fxml");
     }
 
-
-    @FXML
     public void handleUserListButton() throws IOException {
         loadView("UserList.fxml");
     }
 
-    @FXML
     public void handleConcertEditorButton() throws IOException {
         loadView("AdminEditor.fxml");
     }
 
-    @FXML
     public void handleTicketBuyButton() throws IOException {
         loadView("ConcertTickets.fxml");
+    }
+
+    public void handleTicketListButton() throws IOException {
+        loadView("TicketList.fxml");
     }
 
     private void loadView(String fileName) throws IOException {
@@ -108,12 +103,19 @@ public class MainWindowController {
         int availableConcerts = MS.getConcertsCount();
         availableConcertsLabel.setText("Liczba dostępnych koncertów: " + availableConcerts);
 
-        List<Concert> popularConcerts = MS.popularConcerts(3);
+        List<Concert> popularConcerts = MS.popularConcerts(5);
         popularConcertsVBox.getChildren().clear();
         for (Concert popularConcert : popularConcerts) {
-            Label popularConcertLabel = new Label(popularConcert.getName());
-            popularConcertLabel.setStyle("-fx-font-size: 22px; -fx-font-family: 'Roboto'; -fx-text-fill: WHITE;");
+            Label popularConcertLabel = getPopularConcertLabel(popularConcert);
             popularConcertsVBox.getChildren().add(popularConcertLabel);
         }
+    }
+
+    private Label getPopularConcertLabel(Concert popularConcert) {
+        Label popularConcertLabel = new Label(popularConcert.getName());
+        popularConcertLabel.setStyle("-fx-font-size: 22px; -fx-font-family: 'Roboto'; -fx-text-fill: WHITE; " + "-fx-background-color:  linear-gradient(from 25% 25% to 100% 100%, #2c3e50, #34495e); -fx-padding: 10px; -fx-border-radius: 10; -fx-background-radius: 10; " + "-fx-text-alignment: center; -fx-alignment: center;");
+        popularConcertLabel.setMinWidth(200);
+        popularConcertLabel.setAlignment(Pos.CENTER);
+        return popularConcertLabel;
     }
 }

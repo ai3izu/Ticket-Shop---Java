@@ -24,7 +24,6 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
-    @FXML
     public void handleExitButtonAction() {
         Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();

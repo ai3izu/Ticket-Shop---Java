@@ -1,5 +1,9 @@
 package org.db.hibernate;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -36,4 +40,12 @@ public class Ticket {
 
     @Column(name = "purchase_date", nullable = false)
     private Timestamp purchaseDate;
+
+    public IntegerProperty idProperty() {
+        return new SimpleIntegerProperty(id);
+    }
+
+    public ObjectProperty<Timestamp> purchaseDateProperty() {
+        return new SimpleObjectProperty<>(purchaseDate);
+    }
 }

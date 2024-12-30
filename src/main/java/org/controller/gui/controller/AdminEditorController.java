@@ -157,7 +157,6 @@ public class AdminEditorController {
             ConcertDataEditorController editorController = loader.getController();
             editorController.initializeWithConcert(concert);
 
-
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle("Edytuj koncert");
