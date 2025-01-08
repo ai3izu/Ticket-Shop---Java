@@ -53,17 +53,29 @@ public class UserProfileController {
     }
 
     private void displayTicketCards(List<Ticket> ticketList) {
-        for (Ticket ticket : ticketList) {
-            Pane ticketCard = createTicketCard(ticket);
+        if (ticketList == null || ticketList.isEmpty()) {
+            Pane ticketCard = createTicketCard(null);
             ticketCard.setPrefWidth(300);
             ticketsContainer.getChildren().add(ticketCard);
+        } else {
+            for (Ticket ticket : ticketList) {
+                Pane ticketCard = createTicketCard(ticket);
+                ticketCard.setPrefWidth(300);
+                ticketsContainer.getChildren().add(ticketCard);
+            }
         }
     }
 
     private Pane createTicketCard(Ticket ticket) {
         if (ticket == null || ticket.getConcert() == null) {
-            System.out.println("Nieprawidłowy bilet lub brak koncertu.");
-            return new Pane();
+            VBox emptyCard = new VBox(10);
+            emptyCard.setStyle("-fx-background-color: #1b2838; " + "-fx-padding: 20px; " + "-fx-border-radius: 10px; " + "-fx-background-radius: 10px; " + "-fx-alignment: center;");
+            emptyCard.setAlignment(Pos.CENTER);
+            Text concertName = new Text("Brak biletów.");
+            concertName.setStyle("-fx-fill: white; -fx-font-size: 18px;");
+            emptyCard.getChildren().add(concertName);
+            emptyCard.setPrefWidth(300);
+            return emptyCard;
         }
 
         VBox card = new VBox(10);
