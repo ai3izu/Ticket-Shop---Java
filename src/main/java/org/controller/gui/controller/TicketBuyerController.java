@@ -15,6 +15,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import org.controller.business.controller.AdminEditorService;
 import org.controller.business.controller.TicketBuyerService;
 import org.db.hibernate.Concert;
@@ -58,13 +59,27 @@ public class TicketBuyerController {
     }
 
     private void loadCards(List<Concert> concerts) {
-        for (Concert concert : concerts) {
-            HBox concertCard = createConcertCard(concert);
+        if (concerts == null || concerts.isEmpty()) {
+            HBox concertCard = createConcertCard(null);
             concertsContainer.getChildren().add(concertCard);
+        } else {
+            for (Concert concert : concerts) {
+                HBox concertCard = createConcertCard(concert);
+                concertsContainer.getChildren().add(concertCard);
+            }
         }
     }
 
     private HBox createConcertCard(Concert concert) {
+        if (concert == null || concert.getName() == null) {
+            HBox emptyCard = new HBox();
+            emptyCard.setStyle("-fx-background-color: #1b2838; " + "-fx-padding: 20px; " + "-fx-border-radius: 10px; " + "-fx-background-radius: 10px; " + "-fx-alignment: center;");
+            emptyCard.setAlignment(Pos.CENTER);
+            Text concertName = new Text("Brak koncertów.");
+            concertName.setStyle("-fx-fill: white; -fx-font-size: 18px;");
+            emptyCard.getChildren().add(concertName);
+            return emptyCard;
+        }
         HBox concertCard = new HBox();
         concertCard.setSpacing(20);
         concertCard.setPadding(new Insets(20));
