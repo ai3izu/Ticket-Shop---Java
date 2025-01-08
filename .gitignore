@@ -11,6 +11,7 @@ target/
 *.java~
 *.xml~
 *.fxml~
+*.css~
 
 ### Eclipse ###
 .apt_generated
