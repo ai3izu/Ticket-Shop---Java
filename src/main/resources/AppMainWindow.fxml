@@ -27,7 +27,7 @@
                 <Button mnemonicParsing="false" onAction="#handleProfileButton" prefHeight="50.0" prefWidth="200.0"
                         style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
                         text="Profil"/>
-                <Button mnemonicParsing="false" onAction="#handleTicketListButton" prefHeight="50.0" prefWidth="200.0"
+                <Button fx:id="ticketListButton" mnemonicParsing="false" onAction="#handleTicketListButton" prefHeight="50.0" prefWidth="200.0"
                         style="-fx-background-color: #8e44ad; -fx-border-radius: 15; -fx-text-fill: #ffffff; -fx-padding: 10 20 10 20;"
                         text="Zakupione Bilety"/>
                 <Button fx:id="concertEditorButton" mnemonicParsing="false" onAction="#handleConcertEditorButton"

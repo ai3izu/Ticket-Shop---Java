@@ -52,6 +52,14 @@
             <artifactId>hibernate-validator</artifactId>
             <version>6.1.7.Final</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.4</version>
+        </dependency>
+
     </dependencies>
 
     <properties>

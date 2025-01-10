@@ -21,6 +21,8 @@ import java.util.List;
 public class MainWindowController {
     private final MiscService MS = new MiscService();
     @FXML
+    private Button ticketListButton;
+    @FXML
     private VBox popularConcertsVBox;
     @FXML
     private Label availableConcertsLabel;
@@ -49,6 +51,7 @@ public class MainWindowController {
 
         userListButton.setVisible(user != null && "admin".equals(user.getRole()));
         concertEditorButton.setVisible(user != null && "admin".equals(user.getRole()));
+        ticketListButton.setVisible(user != null && "admin".equals(user.getRole()));
     }
 
     public void handleExitButton() {
